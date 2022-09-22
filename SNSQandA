@@ -1,0 +1,134 @@
+1.  SNS - Amazon Simple Notification Service (Amazon SNS)
+
+2. What is SNS
+fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.
+
+3. What are some common use cases for SNS?
+SNS can be used for a variety of things, but some of the most common use cases include sending notifications or alerts to users, sending updates to subscribers, or triggering Lambda functions
+
+4.  You plan to design an application by encrypting all the data in an Amazon Redshift cluster. How will you encrypt the data at rest?
+Using the AWS KMS Default Customer master key
+
+5. An organization decides to build an Amazon Redshift cluster to host sensitive data in their shared services VPC. What control does the organization implement for networks accessing the cluster?
+Defining a cluster security group for the cluster allowing access from the allowed networks.
+
+6. An application saves the logs to an S3 bucket. A user needs to keep the logs for one month for troubleshooting purposes and then clear the logs. What action will enable this?
+Configuring lifecycle configuration rules on the S3 bucket.
+
+7. A website experiences inconstant traffic, and the database cannot keep up with the write requests during peak traffic times. What AWS Service helps to decouple the web application from the database?
+Amazon SQS
+
+8. A solution architect is designing a new web application on AWS. 
+To make the application very popular, the architect focuses on software development and new features without managing or provisioning instances. 
+Which solution is best suited for that?
+
+AWS Lambda and Amazon API Gateway
+
+9. How does Amazon SNS message filtering work?
+ Create an Amazon SNS Topic
+Create the Amazon SQS Queues
+Subscribe the Queues to the Topic
+
+10. How does push-based messaging work? 
+In this form, a publisher sends out a message to the subscriber immediately instead of storing the message.
+
+11. Who is a publisher? 
+A publisher is an entity that sends the messages to the message topics that they have created or have permission to publish.
+
+12. Who is a subscriber? 
+A subscriber is an entity that receives the messages to the topics that they have subscribed to. 
+
+13. What is SNS Topic
+This  is used to filter out the messages that have to be sent to different subscribers. As an AWS developer, you first need to create an SNS topic that acts as the access point for subscribers. Using the topic, subscribers can receive message notifications on their selected subject.
+
+14. what is Message Filter
+After being decoupled using topics, the SNS messages enter the message filter, which further filters the messages based on the subscriber’s selected policy. Post the policy checking and permissions, the messages are finally sent to the respective subscribers.
+
+15. What is Application & System alerts. 
+This is automatic user notifications triggered by predefined thresholds and sent to specific users through SMS or email.
+
+16. What is Push email or text messaging?
+They are two ways of sending messages to individuals or groups (example, news article notifications sent to the newspaper subscribers).
+
+17. What is Mobile push notifications?
+Its a direct messages sent to mobile apps (for example, notifications about any app update that is available for installing)
+
+18. What are the benefits of Amazon SNS?
+High reliability
+Automatic scalability
+Message filtering
+Security
+
+19. What do you mean by Highly Reliability in SNS?
+Amazon SNS also supports messaging on all AWS endpoints including Amazon SQS and AWS Lambda. In case the subscriber endpoint is not supported, the SNS service retries message delivery and can move its messages to dead-letter queries (or DLQ).
+
+20. What do you mean by Automatic scalability?
+With the Amazon SNS service, you can dynamically scale the number of your message requests from any application. Amazon SNS uses the scaling capability of the AWS cloud platform to achieve this benefit.
+
+21. What do you mean by Message filtering?
+The SNS service takes care of your message filtering that allows subscribers to only receive messages of their interest – instead of all the published messages in the SNS topic.
+
+22. What level of security does SNS allows?
+Amazon SNS also supports message encryption to keep your data secure.
+
+23. How to create  an Amazon SNS Topic?
+The first step is to create the Amazon SNS topic that will publish messages – whenever any user request is made on the website.
+
+•	Open the AWS Management Console and sign in with your username and password.
+•	Open the service console for Amazon SNS using the “AWS Services” search box. 
+•	From the landing page of the SNS console, click “Start with an overview” followed by “Topics” from the left side menu.
+•	Next, click “Create topic” and then type the name of your topic (“Topic_1”) in the “Topic name” box of the dialog box (shown below).
+•	Click “Create topic” in the above dialog box to create and add the new topic to the “Topic” details page.
+
+
+24. How to Create the Amazon SQS Queues
+
+•	Open the AWS SQS Console and sign in with your username and password.
+•	Next, from the “Create New Queue” page, enter “Queue_1” in the “Queue Name” box. With the “Standard Queue” option selected, click “Quick-Create Queue.”
+•	Repeat the above step b to create two more queues with names “Queue_2” and “Queue_3.” After creating, all these three SQS queues are listed in the SQS console page
+.
+
+25. How to Subscribe the Queues to the Topic
+
+•	From the available list of queues on the AWS SQS console, select the three queues and then click Queue Actions > “Subscribe Queues to SNS Topic.”
+•	From the “Choose a Topic” list in the “Subs
+•	cribe to a Topic” dialog box, select your listed SNS topic (Topic_1) that was created by you. 
+•	If you want to subscribe your queues to SQS queues created by an external user, use the “Topic ARN” field.
+•	Click Subscribe to subscribe the selected queues to the specific topic.
+
+26. Set Filter Policies to the SNS Subscriptions
+
+•	From the Amazon SNS console, click Topics, then select “Topic_1” from the available list of topics.
+•	From the “Topic_1” details page, you can now view all the SQS queues subscribed to this topic. Here is a sample screen.
+•	Select each queue, then click Edit to open the “Edit subscription” page where you can edit the filter policy for the queue.
+•	Use the JSON editor to enter the JSON code (example, “request_type”:[“type 1”] for Queue_1). 
+•	After making the changes, save your changes.
+•	Repeat the above steps for each of the other two queues. For Queue_3, you don’t need to enter any filter policy as it processes all event messages published to the topic.
+
+27.  Publish Messages to the Topic
+
+•	From the “Topic_1” details page in the Amazon SNS console, click “Publish a message.
+•	Enter the following message details in the “Publish message to topic” page. Here is a sample screen:
+		Subject (optional): contains the message subject (for example, “Message#1”).
+		Keep the “Identical payload for all delivery protocols” option selected.
+		Message body: contains the body of the message to be sent to the endpoint.
+		Message attributes: contains the parameters used in the message. For our example, Type as “String,” Name as “request_type,” and Value as “type 1.”
+•	Publish your first message.
+•	Repeat the above steps to add two more messages (Message#2 and Message#3) with the same parameters as above. For both messages, specify the Value attribute as “type 2.”
+
+28. Verify Your Message Deliveries
+•	From the Amazon SQS console, select your queue followed by Queue Actions > View/Delete Messages.
+•	Click on “Start Polling for Messages” to start receiving the messages.
+•	Repeat the above steps for the remaining queues.
+
+
+
+
+
+
+
+
+
+
+
+
