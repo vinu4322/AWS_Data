@@ -1,0 +1,113 @@
+Q&A on AWS S3
+
+1. Is AWS S3 region entity or global entity? 
+Ans Yes	
+
+2. Will system accept unique name or the same name given globally?
+Ans "No" only unique name will be created
+
+3. Will AS S3 be stored in region or global entity?
+Ans "Yes" it will be stored in region entity only
+
+4. Will the data be safe in AWS S3 bucket?
+Ans "Yes" it will be safe due to data replication in various regions. If any region gets crashed then we can use same data from another region.
+
+5. What consistency does S3 supports
+Ans Read after write consistency
+ 
+6. Once the AWS S3 bucket is created will the system allows you to access the file  
+Ans "No" you will have to give permission to the bucket and S3 policy has to be uploaded
+
+7.How to find S3 policy
+Ans 1. Browse by name S3 bucket public policy 
+2.  Use the link allow public read access to an AWS S3 bucket
+
+8. What do you mean by EAR?
+Ans E= Effect
+       A= Action
+       R= Resource
+
+9. What is effect in AWS S3 means?
+Ans Effect means allow
+
+10. What STAR (*) means AWS?
+Ans * means allow everyone to access the content.
+
+11. Which protocol will the S3 bucket be accessed 
+Ans HTTP protocol
+
+12. Can we create the logs or folders under the object session
+Ans Yes
+
+13. What is versioning in AWS S3 bucket means
+Ans Any edit any update or any changes done in system will be tracked as per date and time.
+
+14. Do we require versioning for log files
+Ans No
+
+15. What do u mean by object writer
+Ans Whoever is updating the file is object writer
+
+16. What are the storgae classess?
+Ans 1. S3 standard (It's costly)
+       2. S3 Intellegent teairing
+       3. S3 standard-IA
+       4. S3 One zone -IA 
+       5. S3 glacier instant retrival
+       6. S3 glacier flexible retrival
+       7. S3 glacier deep archival (it's cheaper)
+
+17. How to change the storage type?
+Ans By using management lifecycle storage type or classes can be changed as per the requirement
+
+18. What is the AWS S3 life cycle rule?
+Ans To initimate the system that you will have to move the files and folders which I have selected.
+
+19. Why is the restriction or the caluses created?
+Ans As AWS need to get some charges from the services they have provided, that's why clauses are created.
+
+20. Can You Host A Website In AWS S3? 
+Ans Yes, we can host a website in the AWS S3 bucket.
+
+21. What kind of data can I store in AWS S3? 
+Ans You can store virtually any kind of data in any format.
+
+22. How Is The Pricing Policy Determined For AWS S3?
+1. Utilization of garage
+2. Storage management
+3. Transfer of information
+4. Transfer acceleration
+5. Number of requests
+
+23. How Would You Delete An AWS S3 Bucket?
+We can comply with those steps to delete an AWS S3 bucket:
+Step 1: Log in to the AWS Management Console and pick S3
+Step 2: Select the bucket that desires to be removed
+Step 3: Press the 'Delete' button
+Step 4: When it activates you to categorize the bucket call for deletion, write the call
+Step 5: Click the 'Confirmation' button
+
+24. What Is An Object Lock Feature In AWS S3?
+Ans These features will lock the object. Nobody can delete, overwrite, or modify the same object. This can be useful if you need to ensure that specific files are not changed or deleted. You can enable object locks on individual files or folders, or on an entire bucket.
+
+25. Is there a way to add a document of more than a hundred Megabytes in Amazon S3?
+Yes, there are ways to add a document of more than a hundred Megabytes in Amazon S3. The first way is to use the multipart upload API.
+
+26.  Does Amazon save its very own data in Amazon S3?
+Yes. 
+
+27. What Is AWS S3 Replication?
+When we need to replicate gadgets asynchronously, we use S3 replication at a few degrees within-side the AWS S3 buckets. This can be auto stretch, actually in minimum budget.
+
+30. How do I control the right of entry to an S3 bucket?
+1. S3 Access Points: 
+2. S3 Bucket Policies: 
+3. Access Control List (ACL)
+4. AWS IAM
+
+31. Explain the S3 bucket.
+1. You can hold records as gadgets in S3 buckets. 
+2. There can be more than one bucket, with each having more than one gadget
+3. An object can be a document, collectively with different types of files including metadata
+
+
