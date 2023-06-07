@@ -181,3 +181,5 @@ Answer:An instance store is a provisional storing type located on disks that are
 a host machine. … This article will present you to the AWS instance store storage type, compare it to 
 AWS Elastic Block Storage (AWS EBS), and show you how to backup data stored on instance stores 
 to AWS EBS 
+
+32. i am just checking the details
